@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="rootPane" minHeight="226.0" prefHeight="768.0" prefWidth="1042.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.M4_CustomerService.M4_CustomerServiceController">
+    <children>
+        <TabPane layoutX="216.0" layoutY="70.0" prefHeight="450.0" prefWidth="584.0" style="-fx-background-color: transparent; -fx-border-color: #e0e0e0; -fx-border-width: 1 0 0 1;" stylesheets="@../css/tabPane.css" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <tabs>
+                <Tab onSelectionChanged="#initAndLoadData_TableFlights" style="-fx-background-color: #3072ff; -fx-text-base-color: white; -fx-cursor: hand;" text="List of flights">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: white;">
+                            <children>
+                                <TableView fx:id="customer_service_table" prefHeight="404.0" prefWidth="692.0" stylesheets="@../css/tableView.css" AnchorPane.bottomAnchor="107.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="95.0">
+                                    <columns>
+                                        <TableColumn fx:id="col_id_customer_service" prefWidth="61.0" style="-fx-alignment: center;" text="Id" />
+                                        <TableColumn fx:id="col_departure_place_customer_service" prefWidth="133.0" style="-fx-alignment: center-left;" text="Departure place" />
+                                        <TableColumn fx:id="col_departure_date_customer_service" prefWidth="154.0" style="-fx-alignment: center-left;" text="Departure date" />
+                                        <TableColumn fx:id="col_departure_time_customer_service" prefWidth="154.0" style="-fx-alignment: center-left;" text="Departure time" />
+                                        <TableColumn fx:id="col_destination_customer_service" prefWidth="119.0" style="-fx-alignment: center-left;" text="Destination" />
+                                        <TableColumn fx:id="col_arrival_date_customer_service" prefWidth="143.0" style="-fx-alignment: center-left;" text="Arrival date" />
+                                        <TableColumn fx:id="col_arrival_time_customer_service" prefWidth="143.0" style="-fx-alignment: center-left;" text="Arrival time" />
+                                        <TableColumn fx:id="col_price_customer_service" prefWidth="105.0" style="-fx-alignment: center-left;" text="Price" />
+                                        <TableColumn fx:id="col_sold_tickets_customer_service" prefWidth="105.0" style="-fx-alignment: center-left;" text="Sold tickets" />
+                                    </columns>
+                                    <padding>
+                                        <Insets left="5.0" right="5.0" />
+                                    </padding>
+                                </TableView>
+                                <HBox alignment="BOTTOM_CENTER" layoutX="-1.0" layoutY="405.0" prefHeight="107.0" prefWidth="717.0" style="-fx-border-color: #e0e0e0; -fx-border-width: 1 0 0 0; -fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                    <children>
+                                        <JFXButton onAction="#assignTicketOnAction" prefHeight="32.0" prefWidth="184.0" style="-fx-border-color: #3072ff; -fx-border-radius: 10em; -fx-background-radius: 10em;" text="Assign ticket" textFill="#3072ff">
+                                            <font>
+                                                <Font size="14.0" />
+                                            </font>
+                                            <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                            </cursor>
+                                            <effect>
+                                                <DropShadow spread="0.26" />
+                                            </effect>
+                                            <HBox.margin>
+                                                <Insets bottom="18.0" left="10.0" right="10.0" />
+                                            </HBox.margin>
+                                        </JFXButton>
+                                        <JFXButton onAction="#refreshFlightsOnAction" prefHeight="32.0" prefWidth="184.0" style="-fx-border-color: #3072ff; -fx-border-radius: 10em; -fx-background-radius: 10em;" text="Refresh" textFill="#3072ff">
+                                            <font>
+                                                <Font size="14.0" />
+                                            </font>
+                                            <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                            </cursor>
+                                            <effect>
+                                                <DropShadow spread="0.26" />
+                                            </effect>
+                                            <HBox.margin>
+                                                <Insets bottom="18.0" left="10.0" right="10.0" />
+                                            </HBox.margin>
+                                        </JFXButton>
+                                    </children>
+                                    <opaqueInsets>
+                                        <Insets />
+                                    </opaqueInsets>
+                                </HBox>
+                                <Label fx:id="queryInfoLabel_customer_service" alignment="CENTER" prefHeight="17.0" prefWidth="460.0" textFill="#3072ff" AnchorPane.bottomAnchor="68.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                    <font>
+                                        <Font name="System Italic" size="12.0" />
+                                    </font>
+                                </Label>
+                                <Label fx:id="queryInfoLabel_User1" alignment="BOTTOM_CENTER" layoutX="182.0" layoutY="14.0" prefHeight="50.0" prefWidth="824.0" text="Customer Service" textFill="#3072ff" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <font>
+                                        <Font size="18.0" />
+                                    </font>
+                                    <padding>
+                                        <Insets bottom="5.0" />
+                                    </padding>
+                                </Label>
+                                <JFXTextField fx:id="listOfFlightsSearchBox" labelFloat="true" layoutY="67.0" promptText="Serach" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                    <padding>
+                                        <Insets left="5.0" right="5.0" />
+                                    </padding>
+                                </JFXTextField>
+                            </children></AnchorPane>
+                    </content>
+                </Tab>
+                <Tab onSelectionChanged="#initAndLoadData_TableTicket" style="-fx-background-color: #3072ff; -fx-text-base-color: white; -fx-cursor: hand;" text="Assigned tickets">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: white;">
+                            <children>
+                                <TableView fx:id="ticket_table" prefHeight="404.0" prefWidth="692.0" stylesheets="@../css/tableView.css" AnchorPane.bottomAnchor="107.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="95.0">
+                                    <columns>
+                                        <TableColumn fx:id="col_id_ticket" prefWidth="61.0" style="-fx-alignment: center;" text="Id" />
+                                        <TableColumn fx:id="col_flight_ticket" prefWidth="466.0" style="-fx-alignment: center-left;" text="Flight" />
+                                        <TableColumn fx:id="col_firstname_ticket" prefWidth="115.0" style="-fx-alignment: center-left;" text="Firstname" />
+                                        <TableColumn fx:id="col_lastname_ticket" prefWidth="126.0" style="-fx-alignment: center-left;" text="Lastname" />
+                                        <TableColumn fx:id="col_phone_number_ticket" prefWidth="120.0" style="-fx-alignment: center-left;" text="Phone number" />
+                                        <TableColumn fx:id="col_email_ticket" prefWidth="148.0" style="-fx-alignment: center-left;" text="Email" />
+                                    </columns>
+                                    <padding>
+                                        <Insets left="5.0" right="5.0" />
+                                    </padding>
+                                </TableView>
+                                <HBox alignment="BOTTOM_CENTER" layoutX="-1.0" layoutY="405.0" prefHeight="107.0" prefWidth="717.0" style="-fx-border-color: #e0e0e0; -fx-border-width: 1 0 0 0; -fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                    <children>
+                                        <JFXButton onAction="#fileChooser" prefHeight="32.0" prefWidth="184.0" style="-fx-border-color: #3072ff; -fx-border-radius: 5em;" text="Generate PDF" textFill="#3072ff">
+                                            <font>
+                                                <Font size="14.0" />
+                                            </font>
+                                            <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                            </cursor>
+                                            <effect>
+                                                <DropShadow spread="0.26" />
+                                            </effect>
+                                            <HBox.margin>
+                                                <Insets bottom="18.0" left="10.0" right="10.0" />
+                                            </HBox.margin>
+                                        </JFXButton>
+                                        <JFXButton fx:id="refreshButton_User1" onAction="#updateTicketOnAction" prefHeight="32.0" prefWidth="184.0" style="-fx-border-color: #3072ff; -fx-border-radius: 5em;" text="Update" textFill="#3072ff">
+                                            <font>
+                                                <Font size="14.0" />
+                                            </font>
+                                            <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                            </cursor>
+                                            <effect>
+                                                <DropShadow spread="0.26" />
+                                            </effect>
+                                            <HBox.margin>
+                                                <Insets bottom="18.0" left="10.0" right="10.0" />
+                                            </HBox.margin>
+                                        </JFXButton>
+                                        <JFXButton fx:id="updateButton_User11" layoutX="337.0" layoutY="67.0" onAction="#deleteTicketOnAction" prefHeight="32.0" prefWidth="184.0" style="-fx-border-color: #3072ff; -fx-border-radius: 5em;" text="Delete" textFill="#3072ff">
+                                            <font>
+                                                <Font size="14.0" />
+                                            </font>
+                                            <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                            </cursor>
+                                            <effect>
+                                                <DropShadow spread="0.26" />
+                                            </effect>
+                                            <HBox.margin>
+                                                <Insets bottom="18.0" left="10.0" right="10.0" />
+                                            </HBox.margin>
+                                        </JFXButton>
+                                        <JFXButton layoutX="439.0" layoutY="67.0" onAction="#refreshFlightsOnAction" prefHeight="32.0" prefWidth="184.0" style="-fx-border-color: #3072ff; -fx-border-radius: 5em;" text="Refresh" textFill="#3072ff">
+                                            <font>
+                                                <Font size="14.0" />
+                                            </font>
+                                            <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                            </cursor>
+                                            <effect>
+                                                <DropShadow spread="0.26" />
+                                            </effect>
+                                            <HBox.margin>
+                                                <Insets bottom="18.0" left="10.0" right="10.0" />
+                                            </HBox.margin>
+                                        </JFXButton>
+                                    </children>
+                                    <opaqueInsets>
+                                        <Insets />
+                                    </opaqueInsets>
+                                </HBox>
+                                <Label fx:id="queryInfoLabel_Ticket" alignment="CENTER" prefHeight="17.0" prefWidth="460.0" textFill="#3072ff" AnchorPane.bottomAnchor="68.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                    <font>
+                                        <Font name="System Italic" size="12.0" />
+                                    </font>
+                                </Label>
+                                <Label fx:id="queryInfoLabel_User11" alignment="BOTTOM_CENTER" layoutX="182.0" layoutY="14.0" prefHeight="50.0" prefWidth="824.0" text="Customer Service" textFill="#3072ff" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <font>
+                                        <Font size="18.0" />
+                                    </font>
+                                    <padding>
+                                        <Insets bottom="5.0" />
+                                    </padding>
+                                </Label>
+                                <JFXTextField fx:id="assignedTicketsSearchBox" labelFloat="true" layoutY="67.0" promptText="Serach" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                    <padding>
+                                        <Insets left="5.0" right="5.0" />
+                                    </padding>
+                                </JFXTextField>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </children>
+</AnchorPane>

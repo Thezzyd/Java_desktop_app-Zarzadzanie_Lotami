@@ -1,0 +1,21 @@
+id_position;module;access
+1;Account manager;1
+1;Technical Efficiency;1
+1;Air Traffic;1
+1;Customer Service;1
+2;Account manager;1
+2;Technical Efficiency;1
+2;Air Traffic;1
+2;Customer Service;1
+3;Account manager;0
+3;Technical Efficiency;1
+3;Air Traffic;0
+3;Customer Service;0
+4;Account manager;0
+4;Technical Efficiency;0
+4;Air Traffic;1
+4;Customer Service;0
+5;Account manager;0
+5;Technical Efficiency;0
+5;Air Traffic;0
+5;Customer Service;1

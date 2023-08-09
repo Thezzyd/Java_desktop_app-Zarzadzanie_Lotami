@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="parentRootPane" minHeight="226.0" prefHeight="768.0" prefWidth="1042.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ParentScene.ModuleParent">
+    <children>
+        <AnchorPane layoutX="217.0" prefHeight="44.0" prefWidth="823.0" style="-fx-background-color: #3072ff; -fx-border-radius: 0 0 2em 2em; -fx-border-color: #3072ff; -fx-border-width: 0; -fx-background-radius: 0 0 2em 2em;" AnchorPane.leftAnchor="219.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <Label fx:id="moduleNameLabel" alignment="CENTER" prefHeight="70.0" prefWidth="723.0" textAlignment="CENTER" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <font>
+                        <Font name="System Bold" size="24.0" />
+                    </font>
+                </Label>
+            </children></AnchorPane>
+        <AnchorPane layoutY="44.0" prefHeight="724.0" prefWidth="218.0" style="-fx-background-color: white; -fx-border-color: white; -fx-border-width: 0 1 0 0;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="44.0">
+            <children>
+                <JFXButton fx:id="customerServiceButton" layoutX="18.0" layoutY="378.0" onAction="#loadSceneM4_CustomerServiceOnAction" prefHeight="32.0" prefWidth="184.0" style="-fx-background-color: #3072ff; -fx-background-radius: 10em; -fx-border-radius: 10em; -fx-border-color: #3072ff;" text="Customer Service" textFill="WHITE" AnchorPane.topAnchor="378.0">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </JFXButton>
+                <JFXButton fx:id="airTrafficButton" layoutX="18.0" layoutY="338.0" onAction="#loadSceneM3_AirTrafficOnAction" prefHeight="32.0" prefWidth="184.0" style="-fx-background-color: #3072ff; -fx-background-radius: 10em; -fx-border-radius: 10em; -fx-border-color: #3072ff;" text="Air Traffic" textFill="WHITE" AnchorPane.topAnchor="338.0">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </JFXButton>
+                <JFXButton fx:id="technicalEfficiencyButton" layoutX="18.0" layoutY="298.0" onAction="#loadSceneM2_TechnicalEfficiencyOnAction" prefHeight="32.0" prefWidth="184.0" style="-fx-background-color: #3072ff; -fx-background-radius: 10em; -fx-border-radius: 10em; -fx-border-color: #3072ff;" text="Technical Efficiency" textFill="WHITE" AnchorPane.topAnchor="298.0">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </JFXButton>
+                <JFXButton fx:id="accountManagerButton" layoutX="18.0" layoutY="258.0" onAction="#loadSceneM1_AccountManagerOnAction" prefHeight="32.0" prefWidth="184.0" style="-fx-background-color: #3072ff; -fx-background-radius: 10em; -fx-border-radius: 10em; -fx-border-color: #3072ff;" text="Account Manager" textFill="WHITE" AnchorPane.topAnchor="258.0">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </JFXButton>
+                <ImageView fx:id="logoImageView" fitHeight="137.0" fitWidth="144.0" layoutX="36.0" layoutY="22.0" pickOnBounds="true">
+                    <image>
+                        <Image url="@../../images/logo_blue.png" />
+                    </image>
+                    <effect>
+                        <DropShadow height="50.65" radius="21.119999999999997" width="35.83">
+                            <color>
+                                <Color red="0.1882352977991104" green="0.4470588266849518" blue="1.0" />
+                            </color>
+                        </DropShadow>
+                    </effect>
+                </ImageView>
+                <JFXButton fx:id="homeButton" layoutX="17.0" layoutY="194.0" onAction="#loadSceneHomeOnAction" prefHeight="32.0" prefWidth="184.0" style="-fx-border-color: #3072ff; -fx-border-radius: 5em; -fx-background-radius: 5em;" text="Home" textFill="#3072ff" AnchorPane.topAnchor="194.0">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                    <effect>
+                        <DropShadow spread="0.26" />
+                    </effect>
+                </JFXButton>
+                <Label layoutX="2.0" layoutY="236.0" prefHeight="0.0" prefWidth="215.0" style="-fx-background-color: #e0e0e0;">
+                    <font>
+                        <Font size="0.9" />
+                    </font>
+                </Label>
+                <AnchorPane layoutY="356.0" prefHeight="107.0" prefWidth="215.0" style="-fx-background-color: white; -fx-border-width: 1 0 0 0; -fx-border-color: #e0e0e0;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                    <children>
+                        <JFXButton fx:id="logoutButton" layoutX="16.0" layoutY="8.0" onAction="#logoutButtonOnAction" prefHeight="32.0" prefWidth="184.0" style="-fx-border-color: #3072ff; -fx-border-radius: 5em; -fx-background-radius: 5em;" text="Logout" textFill="#3072ff" AnchorPane.bottomAnchor="60.0">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
+                            <effect>
+                                <DropShadow spread="0.26" />
+                            </effect>
+                        </JFXButton>
+                        <JFXButton fx:id="quitButton" layoutX="16.0" layoutY="50.0" onAction="#quitButtonOnAction" prefHeight="32.0" prefWidth="184.0" ripplerFill="WHITE" style="-fx-border-radius: 5em; -fx-border-color: #3072ff; -fx-background-radius: 5em;" text="Quit" textFill="#3072ff" AnchorPane.bottomAnchor="18.0">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
+                            <effect>
+                                <DropShadow spread="0.14">
+                                    <color>
+                                        <Color red="0.8899999856948853" green="0.017799999564886093" blue="0.017799999564886093" />
+                                    </color>
+                                </DropShadow>
+                            </effect>
+                        </JFXButton>
+                    </children>
+                </AnchorPane>
+                <JFXButton fx:id="timeSimulationButton" layoutX="16.0" layoutY="548.0" onAction="#loadSceneTimeSimulationOnAction" prefHeight="32.0" prefWidth="184.0" style="-fx-border-color: #3072ff; -fx-border-radius: 5em; -fx-background-radius: 5em;" text="Time simulation" textFill="#3072ff" AnchorPane.bottomAnchor="120.0">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                    <effect>
+                        <DropShadow spread="0.26" />
+                    </effect>
+                </JFXButton>
+            <JFXButton layoutX="16.0" layoutY="488.0" onAction="#databaseDumpPopulated" prefHeight="32.0" prefWidth="184.0" style="-fx-border-color: #3072ff; -fx-border-radius: 5em; -fx-background-radius: 5em;" text="Load populated DB" textFill="#3072ff" AnchorPane.bottomAnchor="204.0">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <effect>
+                  <DropShadow spread="0.26" />
+               </effect>
+            </JFXButton>
+            <JFXButton layoutX="16.0" layoutY="529.0" onAction="#emptyDatabaseData" prefHeight="32.0" prefWidth="184.0" style="-fx-border-color: #3072ff; -fx-border-radius: 5em; -fx-background-radius: 5em;" text="Empty DB" textFill="#3072ff" AnchorPane.bottomAnchor="163.0">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <effect>
+                  <DropShadow spread="0.26" />
+               </effect>
+            </JFXButton>
+            </children>
+        </AnchorPane>
+        <AnchorPane fx:id="containerPane" layoutX="224.0" layoutY="44.0" prefHeight="723.0" prefWidth="825.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="217.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="44.0">
+            <padding>
+                <Insets top="10.0" />
+            </padding></AnchorPane>
+    </children>
+</AnchorPane>

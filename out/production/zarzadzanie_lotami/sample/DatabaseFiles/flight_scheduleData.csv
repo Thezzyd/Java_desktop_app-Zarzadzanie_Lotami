@@ -1,0 +1,4 @@
+id_flight_schedule;id_aircraft;departure_place;departure_date;departure_time;destination;arrival_date;arrival_time;price
+1;;Rzeszów;2020-04-27;14:15:00;Warsaw;2020-04-27;15:00:00;130.00
+2;;Rzeszow;2020-04-27;16:00:00;London;2020-04-27;17:10:00;315.00
+3;;Rzeszow;2020-04-15;08:00:00;Chicago;2020-04-27;14:35:00;980.00

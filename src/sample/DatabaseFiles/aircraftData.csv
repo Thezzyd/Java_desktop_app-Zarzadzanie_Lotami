@@ -1,0 +1,22 @@
+id_aircraft;brand_name;model;engine_number;seats_number;technical_condition;is_tanked;status
+1;Ryanair;787 Dreamliner;G189X001;186;operational;true;available
+2;Ryanair;787 Dreamliner;G189X002;186;for_check_up;true;available
+3;Ryanair;787 Dreamliner;G189X003;186;operational;false;available
+4;Ryanair;787 Dreamliner;G189X004;186;operational;true;available
+5;Ryanair;787 Dreamliner;G189X005;186;operational;false;available
+6;Ryanair;777 X;G234X001;204;operational;false;available
+7;Ryanair;777 X;G234X002;204;operational;false;available
+8;Ryanair;777 X;G234X003;204;operational;true;available
+9;Ryanair;777 X;G234X004;204;operational;true;available
+10;EasyJet;Airbus A319-100;F174X001;186;for_check_up;false;available
+11;EasyJet;Airbus A319-100;F174X002;186;for_check_up;false;available
+12;EasyJet;Airbus A319-100;F174X003;186;operational;true;available
+13;EasyJet;Airbus A319-100;F174X004;186;operational;true;available
+14;EasyJet;Airbus A319-100;F174X005;186;operational;true;available
+15;EasyJet;Airbus A319-100;F174X006;186;operational;false;available
+16;EasyJet;Airbus A320-200;U332X007;146;for_check_up;false;available
+17;Jet2;Boeing 737;H432X001;146;operational;false;available
+18;Jet2;Boeing 737;H432X002;146;for_check_up;false;available
+19;Jet2;Boeing 737;H432X003;146;operational;false;available
+20;Jet2;Boeing 757;H434X001;124;not_operational;true;available
+21;Jet2;Boeing 757;H434X002;124;for_check_up;true;available

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="235.0" prefWidth="455.0" style="-fx-background-color: white; -fx-border-width: 2; -fx-border-color: #3072ff;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.M1_AccountManager.AddPositionPopupController">
+   <children>
+      <HBox alignment="CENTER" layoutX="10.0" layoutY="300.0" prefHeight="50.0" prefWidth="445.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0">
+         <children>
+            <JFXButton onAction="#addPositionOnAction" prefHeight="32.0" prefWidth="184.0" style="-fx-border-color: #3072ff; -fx-border-radius: 10em; -fx-background-radius: 10em;" text="Add" textFill="#3072ff">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <effect>
+                  <DropShadow spread="0.26" />
+               </effect>
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </JFXButton>
+            <JFXButton fx:id="closeAddPositionButton" onAction="#closeAddPositionPopup" prefHeight="32.0" prefWidth="184.0" style="-fx-border-color: #3072ff; -fx-border-radius: 10em; -fx-background-radius: 10em;" text="Close" textFill="#3072ff">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <effect>
+                  <DropShadow spread="0.26" />
+               </effect>
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </JFXButton>
+         </children>
+      </HBox>
+      <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="300.0" AnchorPane.bottomAnchor="55.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label alignment="CENTER" layoutX="30.0" layoutY="30.0" prefWidth="500.0" text="Add new position to system" textAlignment="CENTER" textFill="#3072ff">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </Label>
+            <Label text="Position name" textFill="#3072ff">
+               <VBox.margin>
+                  <Insets left="20.0" right="20.0" top="20.0" />
+               </VBox.margin>
+            </Label>
+            <JFXTextField fx:id="positionNameTextField" onAction="#addPositionOnAction" promptText="Position name">
+               <VBox.margin>
+                  <Insets left="20.0" right="20.0" />
+               </VBox.margin>
+            </JFXTextField>
+            <Label text="Privilages" textFill="#3072ff">
+               <VBox.margin>
+                  <Insets left="20.0" right="20.0" top="20.0" />
+               </VBox.margin>
+            </Label>
+            <JFXCheckBox fx:id="M1_CheckBox" checkedColor="#3072ff" text="AccountManager">
+               <VBox.margin>
+                  <Insets left="20.0" right="20.0" top="20.0" />
+               </VBox.margin>
+            </JFXCheckBox>
+            <JFXCheckBox fx:id="M2_CheckBox" checkedColor="#3072ff" text="Technical Efficiency">
+               <VBox.margin>
+                  <Insets left="20.0" right="20.0" top="20.0" />
+               </VBox.margin>
+            </JFXCheckBox>
+            <JFXCheckBox fx:id="M3_CheckBox" checkedColor="#3072ff" text="AirTraffic">
+               <VBox.margin>
+                  <Insets left="20.0" right="20.0" top="20.0" />
+               </VBox.margin>
+            </JFXCheckBox>
+            <JFXCheckBox fx:id="M4_CheckBox" checkedColor="#3072ff" text="Customer Service">
+               <VBox.margin>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </VBox.margin>
+            </JFXCheckBox>
+            <Label fx:id="addPositionInfoLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="30.0" layoutY="139.0" prefWidth="500.0" textAlignment="CENTER" textFill="#3072ff">
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

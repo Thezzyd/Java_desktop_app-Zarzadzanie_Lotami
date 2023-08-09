@@ -1,0 +1,5 @@
+id_user;firstname;lastname;username;password;id_position;email;phone_number
+1;admin;admin;admin;admin;1;najlepszyAdmin@gmail.com;999999111
+2;Staszek;Super;stachu1;haslo;1;stachu1@gmali.com;666111222
+3;Marian;Kowalski;marianoo;haslo;2;mario1@gmali.com;787541256
+4;Zbyszek;Malinowski;zbyniu;haslo;2;zbynioo1@gmali.com;987789656

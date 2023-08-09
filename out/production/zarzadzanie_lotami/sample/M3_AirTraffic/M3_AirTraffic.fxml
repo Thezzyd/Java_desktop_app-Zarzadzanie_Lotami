@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="rootPane" minHeight="226.0" prefHeight="768.0" prefWidth="1042.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.M3_AirTraffic.M3_AirTrafficController">
+    <children>
+        <TabPane layoutX="216.0" layoutY="70.0" prefHeight="450.0" prefWidth="584.0" style="-fx-background-color: transparent; -fx-border-color: #e0e0e0; -fx-border-width: 1 0 0 1;" stylesheets="@../css/tabPane.css" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <tabs>
+                <Tab onSelectionChanged="#initAndLoadData_FlightSchedule" style="-fx-background-color: #3072ff; -fx-text-base-color: white; -fx-cursor: hand;" text="Flight schedule">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: white;">
+                            <children>
+                                <TableView fx:id="flight_schedule" layoutX="-1.0" layoutY="-2.0" prefHeight="404.0" prefWidth="692.0" stylesheets="@../css/tableView.css" AnchorPane.bottomAnchor="107.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="95.0">
+                                    <columns>
+                                        <TableColumn fx:id="col_id_flight_schedule" prefWidth="75.2000150680542" style="-fx-alignment: center;" text="Id" />
+                                        <TableColumn fx:id="col_aircraft_flight_schedule" prefWidth="86.0" style="-fx-alignment: center-left;" text="Aircraft" />
+                                        <TableColumn fx:id="col_departure_place_flight_schedule" prefWidth="137.0" style="-fx-alignment: center-left;" text="Departure place" />
+                                        <TableColumn fx:id="col_departure_date_flight_schedule" prefWidth="135.0" style="-fx-alignment: center-left;" text="Departure date" />
+                                        <TableColumn fx:id="col_departure_time_flight_schedule" prefWidth="135.0" style="-fx-alignment: center-left;" text="Departure time" />
+                                        <TableColumn fx:id="col_destination_flight_schedule" prefWidth="119.0" style="-fx-alignment: center-left;" text="Destination" />
+                                        <TableColumn fx:id="col_arrival_date_flight_schedule" prefWidth="101.0" style="-fx-alignment: center-left;" text="Arrival date" />
+                                        <TableColumn fx:id="col_arrival_time_flight_schedule" prefWidth="101.0" style="-fx-alignment: center-left;" text="Arrival time" />
+                                        <TableColumn fx:id="col_price_flight_schedule" prefWidth="101.0" style="-fx-alignment: center-left;" text="Price" />
+                                    </columns>
+                                    <padding>
+                                        <Insets left="5.0" right="5.0" />
+                                    </padding>
+                                </TableView>
+                                <HBox alignment="BOTTOM_CENTER" layoutX="-1.0" layoutY="405.0" prefHeight="107.0" prefWidth="717.0" style="-fx-border-color: #e0e0e0; -fx-border-width: 1 0 0 0; -fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                    <children>
+                                        <JFXButton onAction="#updateFlightOnAction" prefHeight="32.0" prefWidth="184.0" style="-fx-border-color: #3072ff; -fx-border-radius: 10em; -fx-background-radius: 10em;" text="Update" textFill="#3072ff">
+                                            <font>
+                                                <Font size="14.0" />
+                                            </font>
+                                            <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                            </cursor>
+                                            <effect>
+                                                <DropShadow spread="0.26" />
+                                            </effect>
+                                            <HBox.margin>
+                                                <Insets bottom="18.0" left="10.0" right="10.0" />
+                                            </HBox.margin>
+                                        </JFXButton>
+                                        <JFXButton layoutX="541.0" layoutY="67.0" onAction="#deleteFlightOnAction" prefHeight="32.0" prefWidth="184.0" style="-fx-border-color: #3072ff; -fx-border-radius: 10em; -fx-background-radius: 10em;" text="Delete" textFill="#3072ff">
+                                            <font>
+                                                <Font size="14.0" />
+                                            </font>
+                                            <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                            </cursor>
+                                            <effect>
+                                                <DropShadow spread="0.26" />
+                                            </effect>
+                                            <HBox.margin>
+                                                <Insets bottom="18.0" left="10.0" right="10.0" />
+                                            </HBox.margin>
+                                        </JFXButton>
+                                        <JFXButton layoutX="439.0" layoutY="67.0" onAction="#addFlightOnAction" prefHeight="32.0" prefWidth="184.0" style="-fx-border-color: #3072ff; -fx-border-radius: 10em; -fx-background-radius: 10em;" text="Add" textFill="#3072ff">
+                                            <font>
+                                                <Font size="14.0" />
+                                            </font>
+                                            <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                            </cursor>
+                                            <effect>
+                                                <DropShadow spread="0.26" />
+                                            </effect>
+                                            <HBox.margin>
+                                                <Insets bottom="18.0" left="10.0" right="10.0" />
+                                            </HBox.margin>
+                                        </JFXButton>
+                                        <JFXButton onAction="#refreshFlightScheduleOnAction" prefHeight="32.0" prefWidth="184.0" style="-fx-border-color: #3072ff; -fx-border-radius: 10em; -fx-background-radius: 10em;" text="Refresh" textFill="#3072ff">
+                                            <font>
+                                                <Font size="14.0" />
+                                            </font>
+                                            <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                            </cursor>
+                                            <effect>
+                                                <DropShadow spread="0.26" />
+                                            </effect>
+                                            <HBox.margin>
+                                                <Insets bottom="18.0" left="10.0" right="10.0" />
+                                            </HBox.margin>
+                                        </JFXButton>
+                                    </children>
+                                    <opaqueInsets>
+                                        <Insets />
+                                    </opaqueInsets>
+                                </HBox>
+                                <Label fx:id="queryInfoLabel_FlightSchedule" alignment="CENTER" prefHeight="17.0" prefWidth="460.0" textFill="#3072ff" AnchorPane.bottomAnchor="68.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                    <font>
+                                        <Font name="System Italic" size="12.0" />
+                                    </font>
+                                </Label>
+                                <Label fx:id="queryInfoLabel_User121" alignment="BOTTOM_CENTER" layoutX="182.0" layoutY="14.0" prefHeight="50.0" prefWidth="824.0" text="Flight schedule" textFill="#3072ff" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <font>
+                                        <Font size="18.0" />
+                                    </font>
+                                    <padding>
+                                        <Insets bottom="5.0" />
+                                    </padding>
+                                </Label>
+                                <JFXTextField fx:id="flightScheduleSearchBox" labelFloat="true" layoutY="67.0" promptText="Serach" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                    <padding>
+                                        <Insets left="5.0" right="5.0" />
+                                    </padding>
+                                </JFXTextField>
+                            </children></AnchorPane>
+                    </content>
+                </Tab>
+                <Tab onSelectionChanged="#initAndLoadData_TakeOffService" style="-fx-background-color: #3072ff; -fx-text-base-color: white; -fx-cursor: hand;" text="Take-off service">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: white;">
+                            <children>
+                                <TableView fx:id="take_off_service_table" layoutX="-1.0" layoutY="-2.0" prefHeight="404.0" prefWidth="692.0" stylesheets="@../css/tableView.css" AnchorPane.bottomAnchor="107.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="95.0">
+                                    <columns>
+                                        <TableColumn fx:id="col_id_flight_take_off_service" prefWidth="75.2000150680542" style="-fx-alignment: center;" text="Flight id" />
+                                        <TableColumn fx:id="col_departure_date_flight_take_off_service" prefWidth="118.0" style="-fx-alignment: center-left;" text="Departure date" />
+                                        <TableColumn fx:id="col_departure_time_flight_take_off_service" prefWidth="124.0" style="-fx-alignment: center-left;" text="Departure time" />
+                                        <TableColumn fx:id="col_sold_tickets_flight_take_off_service" prefWidth="114.0" style="-fx-alignment: center-left;" text="Sold tickets" />
+                                        <TableColumn fx:id="col_aircraft_flight_take_off_service" prefWidth="217.0" style="-fx-alignment: center-left;" text="Assigned aircraft" />
+                                        <TableColumn fx:id="col_status_flight_take_off_service" prefWidth="477.0" style="-fx-alignment: center-left;" text="Aircraft status" />
+                                    </columns>
+                                    <padding>
+                                        <Insets left="5.0" right="5.0" />
+                                    </padding>
+                                </TableView>
+                                <HBox alignment="BOTTOM_CENTER" layoutX="-1.0" layoutY="405.0" prefHeight="107.0" prefWidth="717.0" style="-fx-border-color: #e0e0e0; -fx-border-width: 1 0 0 0; -fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                    <children>
+                                        <JFXButton onAction="#updateTakeOffFlightOnAction" prefHeight="32.0" prefWidth="184.0" style="-fx-border-color: #3072ff; -fx-border-radius: 10em; -fx-background-radius: 10em;" text="Update" textFill="#3072ff">
+                                            <font>
+                                                <Font size="14.0" />
+                                            </font>
+                                            <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                            </cursor>
+                                            <effect>
+                                                <DropShadow spread="0.26" />
+                                            </effect>
+                                            <HBox.margin>
+                                                <Insets bottom="18.0" left="10.0" right="10.0" />
+                                            </HBox.margin>
+                                        </JFXButton>
+                                        <JFXButton onAction="#refreshTakeOffServiceOnAction" prefHeight="32.0" prefWidth="184.0" style="-fx-border-color: #3072ff; -fx-border-radius: 10em; -fx-background-radius: 10em;" text="Refresh" textFill="#3072ff">
+                                            <font>
+                                                <Font size="14.0" />
+                                            </font>
+                                            <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                            </cursor>
+                                            <effect>
+                                                <DropShadow spread="0.26" />
+                                            </effect>
+                                            <HBox.margin>
+                                                <Insets bottom="18.0" left="10.0" right="10.0" />
+                                            </HBox.margin>
+                                        </JFXButton>
+                                    </children>
+                                    <opaqueInsets>
+                                        <Insets />
+                                    </opaqueInsets>
+                                </HBox>
+                                <Label fx:id="queryInfoLabel_take_off_service" alignment="CENTER" prefHeight="17.0" prefWidth="460.0" textFill="#3072ff" AnchorPane.bottomAnchor="68.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                    <font>
+                                        <Font name="System Italic" size="12.0" />
+                                    </font>
+                                </Label>
+                                <Label fx:id="queryInfoLabel_User131" alignment="BOTTOM_CENTER" layoutX="182.0" layoutY="14.0" prefHeight="50.0" prefWidth="824.0" text="Take-off service" textFill="#3072ff" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <font>
+                                        <Font size="18.0" />
+                                    </font>
+                                    <padding>
+                                        <Insets bottom="5.0" />
+                                    </padding>
+                                </Label>
+                                <JFXTextField fx:id="takeOffServiceSearchBox" labelFloat="true" layoutY="67.0" promptText="Serach" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                    <padding>
+                                        <Insets left="5.0" right="5.0" />
+                                    </padding>
+                                </JFXTextField>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab onSelectionChanged="#initAndLoadData_LandingService" style="-fx-background-color: #3072ff; -fx-text-base-color: white; -fx-cursor: hand;" text="Landing service">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: white;">
+                            <children>
+                                <TableView fx:id="landing_service_table" layoutX="-1.0" layoutY="-2.0" prefHeight="404.0" prefWidth="692.0" stylesheets="@../css/tableView.css" AnchorPane.bottomAnchor="107.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="95.0">
+                                    <columns>
+                                        <TableColumn fx:id="col_id_flight_landing_service" prefWidth="75.2000150680542" style="-fx-alignment: center;" text="Flight id" />
+                                        <TableColumn fx:id="col_arrival_time_flight_landing_service" prefWidth="123.0" style="-fx-alignment: center;" text="Arrival time" />
+                                        <TableColumn fx:id="col_aircraft_flight_landing_service" prefWidth="179.0" style="-fx-alignment: center-left;" text="Aircraft" />
+                                        <TableColumn fx:id="col_landed_flight_landing_service" prefWidth="135.0" style="-fx-alignment: center-left;" text="Aircraft status" />
+                                    </columns>
+                                    <padding>
+                                        <Insets left="5.0" right="5.0" />
+                                    </padding>
+                                </TableView>
+                                <HBox alignment="BOTTOM_CENTER" layoutX="-1.0" layoutY="405.0" prefHeight="107.0" prefWidth="717.0" style="-fx-border-color: #e0e0e0; -fx-border-width: 1 0 0 0; -fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                    <children>
+                                        <JFXButton onAction="#updateLandingFlightOnAction" prefHeight="32.0" prefWidth="184.0" style="-fx-border-color: #3072ff; -fx-border-radius: 10em; -fx-background-radius: 10em;" text="Update" textFill="#3072ff">
+                                            <font>
+                                                <Font size="14.0" />
+                                            </font>
+                                            <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                            </cursor>
+                                            <effect>
+                                                <DropShadow spread="0.26" />
+                                            </effect>
+                                            <HBox.margin>
+                                                <Insets bottom="18.0" left="10.0" right="10.0" />
+                                            </HBox.margin>
+                                        </JFXButton>
+                                        <JFXButton onAction="#refreshLandingServiceOnAction" prefHeight="32.0" prefWidth="184.0" style="-fx-border-color: #3072ff; -fx-border-radius: 10em; -fx-background-radius: 10em;" text="Refresh" textFill="#3072ff">
+                                            <font>
+                                                <Font size="14.0" />
+                                            </font>
+                                            <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                            </cursor>
+                                            <effect>
+                                                <DropShadow spread="0.26" />
+                                            </effect>
+                                            <HBox.margin>
+                                                <Insets bottom="18.0" left="10.0" right="10.0" />
+                                            </HBox.margin>
+                                        </JFXButton>
+                                    </children>
+                                    <opaqueInsets>
+                                        <Insets />
+                                    </opaqueInsets>
+                                </HBox>
+                                <Label fx:id="queryInfoLabel_landing_service" alignment="CENTER" prefHeight="17.0" prefWidth="460.0" textFill="#3072ff" AnchorPane.bottomAnchor="68.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                    <font>
+                                        <Font name="System Italic" size="12.0" />
+                                    </font>
+                                </Label>
+                                <Label fx:id="queryInfoLabel_User111" alignment="BOTTOM_CENTER" layoutX="182.0" layoutY="14.0" prefHeight="50.0" prefWidth="824.0" text="Landing service" textFill="#3072ff" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <font>
+                                        <Font size="18.0" />
+                                    </font>
+                                    <padding>
+                                        <Insets bottom="5.0" />
+                                    </padding>
+                                </Label>
+                                <JFXTextField fx:id="landingServiceSearchBox" labelFloat="true" layoutY="67.0" promptText="Serach" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                    <padding>
+                                        <Insets left="5.0" right="5.0" />
+                                    </padding>
+                                </JFXTextField>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </children>
+</AnchorPane>
